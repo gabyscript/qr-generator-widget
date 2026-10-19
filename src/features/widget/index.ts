@@ -1,0 +1,5 @@
+export { QrWidget } from './components/QrWidget'
+export { WidgetStage } from './components/WidgetStage'
+export { STAGE_TRANSITION_MS } from './lib/animation'
+export { getQrModuleCount, QR_MAX_BYTES } from './lib/qrCapacity'
+export { WidgetPage } from './pages/WidgetPage'

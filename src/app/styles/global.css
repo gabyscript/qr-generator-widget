@@ -1,0 +1,14 @@
+/*
+ * Minimal reset shared by every page, including /widget.
+ * Theme colors and typography live in features/theme (scoped to [data-theme]).
+ * Never set a `background` here: the /widget page must stay transparent for OBS.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}

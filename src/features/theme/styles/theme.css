@@ -1,0 +1,108 @@
+/*
+ * Design tokens and base styles of the configurator UI.
+ * Everything is scoped to [data-theme], which the inline script in index.html sets on every page
+ * except /widget: OBS must never receive a background or theme colors.
+ */
+
+[data-theme] {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  --control-height: 36px;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-muted: #f4f4f5;
+  --surface-hover: #f0f0f2;
+  --border: #e4e4e7;
+  --border-strong: #d4d4d8;
+  --text: #18181b;
+  --text-muted: #52525b;
+  --text-subtle: #71717a;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-contrast: #ffffff;
+  --focus: #6366f1;
+  --success: #15803d;
+  --warning: #a16207;
+  --danger: #dc2626;
+  --checker-a: #ececef;
+  --checker-b: #f8f8fa;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0f0f11;
+  --surface: #18181b;
+  --surface-muted: #131316;
+  --surface-hover: #232327;
+  --border: #27272a;
+  --border-strong: #3f3f46;
+  --text: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --text-subtle: #8f8f99;
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+  --accent-contrast: #0f0f11;
+  --focus: #818cf8;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --checker-a: #1c1c20;
+  --checker-b: #26262b;
+}
+
+html[data-theme] {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-theme] code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+[data-theme] :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+[data-theme] ::selection {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+/* Set for a moment by applyTheme() so switching themes cross-fades instead of flashing. */
+html[data-theme-switching] *,
+html[data-theme-switching] *::before,
+html[data-theme-switching] *::after {
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    fill 200ms ease !important;
+}

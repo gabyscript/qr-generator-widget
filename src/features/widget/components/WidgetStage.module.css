@@ -1,0 +1,23 @@
+.stage {
+  transition:
+    opacity var(--stage-duration) ease,
+    transform var(--stage-duration) ease;
+}
+
+.stage[data-visible='false'] {
+  opacity: 0;
+}
+
+.stage[data-effect='slide'][data-visible='false'] {
+  transform: translateY(40px);
+}
+
+.stage[data-effect='zoom'][data-visible='false'] {
+  transform: scale(0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage[data-visible='false'] {
+    transform: none;
+  }
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>QR Widget para OBS</title>
+    <!--
+      Runs before the first paint:
+      - /widget: marks the page so its OBS-only styles (transparent, no scrollbars) apply, and
+        skips the theme, which must never paint there.
+      - Elsewhere: applies the theme to avoid a flash of the wrong one.
+      Keep the storage key in sync with src/features/theme/lib/theme.ts.
+    -->
+    <script>
+      ;(function () {
+        if (location.pathname.startsWith('/widget')) {
+          document.documentElement.dataset.page = 'widget'
+          return
+        }
+        var theme
+        try {
+          theme = localStorage.getItem('qr-widget:theme')
+        } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+        document.documentElement.dataset.theme = theme
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

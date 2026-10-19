@@ -1,0 +1,23 @@
+/*
+ * OBS composites the page over the stream: nothing but the widget may paint.
+ * Scoped to html[data-page='widget'] (set by the inline script in index.html) because this CSS
+ * also loads with the configurator, which imports QrWidget from this feature.
+ */
+:global(html[data-page='widget']) {
+  color-scheme: normal;
+}
+
+:global(html[data-page='widget']),
+:global(html[data-page='widget'] body) {
+  background: transparent;
+}
+
+:global(html[data-page='widget'] body) {
+  overflow: hidden;
+}
+
+.page {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
