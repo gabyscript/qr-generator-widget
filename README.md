@@ -66,7 +66,7 @@ npm test           # vitest
 
 ## Deploy
 
-Sitio 100% estático en **Netlify** (build: `npm run build`, publish: `dist`). `public/_redirects` (`/* /index.html 200`) hace que `/widget?...` funcione al cargarlo directo desde OBS.
+Sitio 100% estático en **Netlify**, configurado en `netlify.toml`: build `npm run build`, publish `dist` y Node 24. El redirect SPA (`/* /index.html 200`) hace que `/widget?...` funcione al cargarlo directo desde OBS. Los headers de seguridad permiten embeber el sitio solo en sí mismo y en [Stream Toolkit](https://streams-toolkit.netlify.app) (`frame-ancestors`); OBS no se ve afectado porque una fuente de navegador no es un iframe.
 
 ## Estructura
 

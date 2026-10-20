@@ -2,7 +2,11 @@
   "name": "qr-generator-widget",
   "private": true,
   "version": "0.0.0",
+  "description": "Convierte un link en un código QR personalizable para usar como fuente de navegador en OBS.",
   "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

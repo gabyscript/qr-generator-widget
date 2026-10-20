@@ -1,0 +1,160 @@
+{
+  "$schema": "https://streams-toolkit.netlify.app/toolkit.schema.json",
+  "slug": "qr",
+  "name": "Código QR",
+  "type": "widget",
+  "description": "Convierte cualquier link en un código QR personalizable, con texto, colores y animación, listo para usar como fuente de navegador en OBS.",
+  "url": "https://qr-generator-widget.netlify.app",
+  "configUrl": "https://qr-generator-widget.netlify.app/",
+  "previewUrl": "https://qr-generator-widget.netlify.app/widget?u=https%3A%2F%2Fstreams-toolkit.netlify.app&t=Escan%C3%A9ame",
+  "obs": { "width": 340, "height": 390 },
+  "params": [
+    {
+      "name": "u",
+      "description": "URL de destino del QR, con http:// o https://, codificada para URL (https%3A%2F%2F…). Hasta 2048 caracteres.",
+      "required": true
+    },
+    {
+      "name": "t",
+      "description": "Texto que acompaña al QR, hasta 120 caracteres. Si no se indica, el QR va sin texto.",
+      "required": false
+    },
+    {
+      "name": "pos",
+      "description": "Posición del texto: top (arriba) o bottom (abajo).",
+      "default": "bottom",
+      "required": false,
+      "values": ["top", "bottom"]
+    },
+    {
+      "name": "tc",
+      "description": "Color del texto en hex, sin # (fff o ffffff).",
+      "default": "ffffff",
+      "required": false
+    },
+    {
+      "name": "fs",
+      "description": "Tamaño del texto en píxeles.",
+      "default": 28,
+      "required": false,
+      "min": 12,
+      "max": 120
+    },
+    {
+      "name": "ff",
+      "description": "Fuente del texto (Google Fonts).",
+      "default": "inter",
+      "required": false,
+      "values": [
+        "inter",
+        "roboto",
+        "montserrat",
+        "poppins",
+        "rubik",
+        "space-grotesk",
+        "oswald",
+        "bebas-neue",
+        "russo-one",
+        "orbitron",
+        "bangers",
+        "press-start-2p"
+      ]
+    },
+    {
+      "name": "te",
+      "description": "Efecto para que el texto se lea mejor: none (ninguno), shadow (sombra) u outline (contorno).",
+      "default": "none",
+      "required": false,
+      "values": ["none", "shadow", "outline"]
+    },
+    {
+      "name": "tp",
+      "description": "Fondo detrás del texto (1 = sí, 0 = no).",
+      "default": "0",
+      "required": false,
+      "values": ["1", "0"]
+    },
+    {
+      "name": "pc",
+      "description": "Color del fondo detrás del texto en hex, sin #.",
+      "default": "000000",
+      "required": false
+    },
+    {
+      "name": "qc",
+      "description": "Color del QR en hex, sin #.",
+      "default": "000000",
+      "required": false
+    },
+    {
+      "name": "qb",
+      "description": "Color de fondo del QR en hex, sin #. Se ignora si qt = 1.",
+      "default": "ffffff",
+      "required": false
+    },
+    {
+      "name": "qt",
+      "description": "Fondo del QR transparente (1 = sí, 0 = no).",
+      "default": "0",
+      "required": false,
+      "values": ["1", "0"]
+    },
+    {
+      "name": "qs",
+      "description": "Tamaño del QR en píxeles.",
+      "default": 256,
+      "required": false,
+      "min": 64,
+      "max": 1024
+    },
+    {
+      "name": "qp",
+      "description": "Margen libre alrededor del QR en píxeles. Un margen muy pequeño dificulta escanearlo.",
+      "default": 16,
+      "required": false,
+      "min": 0,
+      "max": 64
+    },
+    {
+      "name": "qr",
+      "description": "Radio de los bordes redondeados en píxeles.",
+      "default": 12,
+      "required": false,
+      "min": 0,
+      "max": 64
+    },
+    {
+      "name": "an",
+      "description": "Modo de animación: static (fijo, siempre visible) o loop (entrada + repetición).",
+      "default": "static",
+      "required": false,
+      "values": ["static", "loop"]
+    },
+    {
+      "name": "ae",
+      "description": "Efecto de entrada en modo loop: fade (desvanecer), slide (deslizar) o zoom.",
+      "default": "fade",
+      "required": false,
+      "values": ["fade", "slide", "zoom"]
+    },
+    {
+      "name": "vs",
+      "description": "Modo loop: segundos que el QR queda visible en cada aparición.",
+      "default": 15,
+      "required": false,
+      "min": 3,
+      "max": 600
+    },
+    {
+      "name": "rm",
+      "description": "Modo loop: cada cuántos minutos vuelve a aparecer, contados de inicio a inicio.",
+      "default": 5,
+      "required": false,
+      "min": 1,
+      "max": 120
+    }
+  ],
+  "tags": ["obs", "qr", "codigo-qr", "link", "redes-sociales", "overlay"],
+  "usage": "USAGE.md",
+  "previewImage": "docs/preview.gif"
+}
