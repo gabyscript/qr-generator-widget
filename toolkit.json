@@ -6,7 +6,7 @@
   "description": "Convierte cualquier link en un código QR personalizable, con texto, colores y animación, listo para usar como fuente de navegador en OBS.",
   "url": "https://qr-generator-widget.netlify.app",
   "configUrl": "https://qr-generator-widget.netlify.app/",
-  "previewUrl": "https://qr-generator-widget.netlify.app/widget?u=https%3A%2F%2Fstreams-toolkit.netlify.app&t=Escan%C3%A9ame",
+  "previewUrl": "https://qr-generator-widget.netlify.app/widget?u=https%3A%2F%2Fstreams-toolkit.netlify.app&t=Escan%C3%A9ame&te=outline",
   "obs": { "width": 340, "height": 390 },
   "params": [
     {
